@@ -7,6 +7,7 @@ namespace ManipulationsUsingLinq
         static void Main(string[] args)
         {
             Manipulations.Run();
+            Manipulations.MatchAlphanumericCharacters();
         }
     }
 }
