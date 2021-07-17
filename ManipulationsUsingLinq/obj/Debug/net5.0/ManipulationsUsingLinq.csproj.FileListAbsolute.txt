@@ -1,0 +1,16 @@
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.exe
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.deps.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.runtimeconfig.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.runtimeconfig.dev.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ref\ManipulationsUsingLinq.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\bin\Debug\net5.0\ManipulationsUsingLinq.pdb
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.csproj.AssemblyReference.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.AssemblyInfoInputs.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.AssemblyInfo.cs
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.csproj.CoreCompileInputs.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ref\ManipulationsUsingLinq.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.pdb
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\ManipulationsUsingLinq\obj\Debug\net5.0\ManipulationsUsingLinq.genruntimeconfig.cache
