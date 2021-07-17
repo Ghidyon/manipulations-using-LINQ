@@ -46,14 +46,31 @@ namespace ManipulationsUsingLinq
 
             Console.WriteLine("Input any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
             string input = Console.ReadLine();
-            List<int> output = new();
+            string outputQuery = null;
+            string outputMethod = null;
 
             foreach (char c in input)
             {
-                output.Add(charactersDictionary[c]);
+                var querySyntax = from value in charactersDictionary
+                                  where value.Key == c
+                                  select value.Value;
+
+                foreach (var value in querySyntax)
+                {
+                    outputQuery += value;
+                }
+
+                var methodSyntax = charactersDictionary.Where(value => value.Key == c);
+
+                foreach (var value in methodSyntax)
+                {
+                    outputMethod += value.Value;
+                }
             }
 
-            Console.WriteLine($"\nOutput: { string.Join("", output) }");
+            Console.WriteLine($"\nOutput Using Query Syntax: {outputQuery}");
+            Console.WriteLine();
+            Console.WriteLine($"\nOutput Using Method Syntax: {outputMethod}");
         }
     }
 }
