@@ -9,6 +9,7 @@ namespace ManipulationsUsingLinq
             Manipulations.Run();
             Manipulations.MatchAlphanumericCharacters();
 
+            Application.Run();
             //Console.ReadKey();
         }
     }
