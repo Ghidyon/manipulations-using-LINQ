@@ -27,6 +27,7 @@ namespace ManipulationsUsingLinq
             //                     where accNumbers.Contains(accountNumber)
             //                     select querySyntax);
             //return accountNumbers.ToString();
+            return "";
         }
     }
 }

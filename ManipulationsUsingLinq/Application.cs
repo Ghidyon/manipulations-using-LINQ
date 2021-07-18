@@ -35,11 +35,100 @@ namespace ManipulationsUsingLinq
                     
                     while (!ServiceOperations.NameRegex.IsMatch(firstName))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter a valid name!");
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("Enter First Name");
                         firstName = Console.ReadLine();
-
+                    }
+                    
+                    Console.WriteLine("Enter Last Name");
+                    string lastName = Console.ReadLine();
+                    
+                    while (!ServiceOperations.NameRegex.IsMatch(lastName))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter a valid name!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Enter Last Name");
+                        lastName = Console.ReadLine();
+                    }
+                    
+                    Console.WriteLine("Enter Middle Name");
+                    string middleName = Console.ReadLine();
+                    
+                    while (!ServiceOperations.NameRegex.IsMatch(middleName))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter a valid name!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Enter Middle Name");
+                        middleName = Console.ReadLine();
                     }
 
+                    Console.WriteLine("Select your Gender:\n1. Male \n2. Female");
+                    string gender = Console.ReadLine().Trim();
+
+                    while (string.IsNullOrWhiteSpace(gender) || (gender != "1" && gender != "2"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid Gender Selection");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Select your Gender using the number key: \n1. Male \n2. Female");
+                        gender = Console.ReadLine().Trim();
+                    }
+
+                    Gender selectedGender = ServiceOperations.GenderSelection(gender);
+
+                    Console.WriteLine("Enter Email");
+                    string email = Console.ReadLine();
+                    
+                    while (!ServiceOperations.EmailRegex.IsMatch(email))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter a valid email!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Enter Email");
+                        email = Console.ReadLine();
+                    }
+
+                    Console.WriteLine("Enter Date Of Birth");
+                    var dob = Console.ReadLine().Trim();
+
+                    DateTime dobValue;
+                    while (string.IsNullOrWhiteSpace(dob) || !(DateTime.TryParse(dob, out dobValue)))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter a valid date!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("Enter Date of Birth");
+                        dob = Console.ReadLine();
+                    }
+
+                    DateTime DateOfBirth = DateTime.Parse(dob);
+
+                    if ((DateTime.Now.Year - DateOfBirth.Year) < 18)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("You're not eligible to enroll!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter Account Number");
+                        string accNumber = Console.ReadLine();
+
+                        while (!ServiceOperations.TenDigitRegex.IsMatch(accNumber))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Please enter a 10-digit account number!");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("Enter Account Number");
+                            accNumber = Console.ReadLine();
+                        }
+
+                        ulong accountNumber = ulong.Parse(accNumber);
+                    }
                 }
                 
                 if (operation == BVNOperations.CheckBVN)

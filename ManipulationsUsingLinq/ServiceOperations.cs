@@ -9,23 +9,30 @@ namespace ManipulationsUsingLinq
 {
     public static class ServiceOperations
     {
-        public static Regex NameRegex= new Regex(@"^[a-zA-z]+$");
-        public static Regex TenDigitRegex = new Regex(@"^\d{10}$");
-        public static Regex EmailRegex = new Regex(@"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        public static readonly Regex NameRegex = new(@"^[a-zA-z]+$");
+        public static readonly Regex TenDigitRegex = new(@"^\d{10}$");
+        public static readonly Regex EmailRegex = new(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+        //public static readonly Regex EmailRegex = new(@"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
 
         public static BVNOperations MatchOption(string option)
         {
-            switch (option)
+            return option switch
             {
-                case "1":
-                    return BVNOperations.EnrollForBVN;
-                case "2":
-                    return BVNOperations.CheckBVN;
-                case "3":
-                    return BVNOperations.End;
-                default:
-                    return BVNOperations.ChooseOptions;
-            }
+                "1" => BVNOperations.EnrollForBVN,
+                "2" => BVNOperations.CheckBVN,
+                "3" => BVNOperations.End,
+                _ => BVNOperations.ChooseOptions
+            };
+        }
+
+        public static Gender GenderSelection(string gender)
+        {
+            return gender switch
+            {
+                "1" => Gender.Male,
+                "2" => Gender.Female,
+                _ => Gender.SelectGender
+            };
         }
     }
 }
