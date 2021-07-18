@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 namespace ManipulationsUsingLinq
 {
     public static class Manipulations
@@ -44,8 +44,17 @@ namespace ManipulationsUsingLinq
                 {'!', 0 }
             };
 
-            Console.WriteLine("Input any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
-            string input = Console.ReadLine();
+            Console.WriteLine("\nInput any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
+            string input = Console.ReadLine().Trim();
+            Regex regex = new Regex(@"\b(\D\W\S[\*|\&|\(|\)|\^|\%|\$|\#|\@|\!])");
+            while (string.IsNullOrEmpty(input) || !regex.IsMatch(input))
+            {
+                Console.WriteLine("Please enter a valid input!");
+                Console.WriteLine("\nInput any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
+                input = Console.ReadLine().Trim();
+                input = regex.IsMatch(input) ? input : null;
+            }
+
             string outputQuery = null;
             string outputMethod = null;
 
@@ -69,7 +78,6 @@ namespace ManipulationsUsingLinq
             }
 
             Console.WriteLine($"\nOutput Using Query Syntax: {outputQuery}");
-            Console.WriteLine();
             Console.WriteLine($"\nOutput Using Method Syntax: {outputMethod}");
         }
     }
