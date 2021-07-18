@@ -8,6 +8,8 @@ namespace ManipulationsUsingLinq
         {
             Manipulations.Run();
             Manipulations.MatchAlphanumericCharacters();
+
+            //Console.ReadKey();
         }
     }
 }

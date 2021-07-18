@@ -44,13 +44,13 @@ namespace ManipulationsUsingLinq
                 {'!', 0 }
             };
 
-            Console.WriteLine("\nInput any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
+            Console.WriteLine("\nInput any of the following characters [!, ), (, *, &, ^, %, $, #, @] to match the numbers 0 - 9");
             string input = Console.ReadLine().Trim();
-            Regex regex = new Regex(@"\b(\D\W\S[\*|\&|\(|\)|\^|\%|\$|\#|\@|\!])");
+            Regex regex = new Regex(@"(\*|\&|\(|\)|\^|\%|\$|\#|\@|\!)+");
             while (string.IsNullOrEmpty(input) || !regex.IsMatch(input))
             {
                 Console.WriteLine("Please enter a valid input!");
-                Console.WriteLine("\nInput any of the following characters [ ), (, *, &, ^, %, $, #, @, ! ]");
+                Console.WriteLine("\nInput any of the following characters [!, ), (, *, &, ^, %, $, #, @], to match the numbers 0 - 9");
                 input = Console.ReadLine().Trim();
                 input = regex.IsMatch(input) ? input : null;
             }
