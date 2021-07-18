@@ -5,7 +5,7 @@ Task:
 2. Given a non-empty string consisting only of special chars (!, @, # etc.), return a number (as a string) where each digit corresponds to a given special char on the custom keyboard<br/>
 { 1 → ), 2 → (, 3 → *, 4 → &, 5 → ^, 6 → %, 7 → $, 8 → #, 9 → @, 0 → ! }.<br/>
 
-- Expected input and output<br/>
+    Expected input and output<br/>
 - "())(" → "2112"<br/>
 - "*$(#&" → "3284"<br/>
 - "!!!!!!!!!!" → "0000000000"<br/>
