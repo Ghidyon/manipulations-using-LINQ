@@ -31,9 +31,10 @@ namespace ManipulationsUsingLinq
             return "You do not have a BVN, please enroll!";
         }
 
-        public static List<User> AccessDatabase()
+        public static bool IsExistingUser(string lastName, string firstName, string middleName, ulong accountNumber)
         {
-            return _Users;
+            return _Users.Any(user => (user.FirstName == firstName && user.LastName == lastName && user.MiddleName == middleName)
+            || user.AccountNumber == accountNumber);
         }
     }
 }

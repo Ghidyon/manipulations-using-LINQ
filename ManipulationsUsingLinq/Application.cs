@@ -129,9 +129,7 @@ namespace ManipulationsUsingLinq
 
                         ulong accountNumber = ulong.Parse(accNumber);
 
-                        var data = Database.AccessDatabase();
-
-                        var existingUser = data.Any(d => (d.FirstName == firstName && d.LastName == lastName && d.MiddleName == middleName) || d.AccountNumber == accountNumber);
+                        bool existingUser = Database.IsExistingUser(lastName, firstName, middleName, accountNumber);
                         if (existingUser)
                         {
                             Console.WriteLine("You cannot enroll more than once!"); 
