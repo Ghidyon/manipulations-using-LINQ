@@ -32,7 +32,7 @@ namespace ManipulationsUsingLinq
                 {
                     Console.WriteLine("Enter First Name");
                     string firstName = Console.ReadLine();
-                    
+
                     while (!ServiceOperations.NameRegex.IsMatch(firstName))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -41,10 +41,10 @@ namespace ManipulationsUsingLinq
                         Console.WriteLine("Enter First Name");
                         firstName = Console.ReadLine();
                     }
-                    
+
                     Console.WriteLine("Enter Last Name");
                     string lastName = Console.ReadLine();
-                    
+
                     while (!ServiceOperations.NameRegex.IsMatch(lastName))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -53,10 +53,10 @@ namespace ManipulationsUsingLinq
                         Console.WriteLine("Enter Last Name");
                         lastName = Console.ReadLine();
                     }
-                    
+
                     Console.WriteLine("Enter Middle Name");
                     string middleName = Console.ReadLine();
-                    
+
                     while (!ServiceOperations.NameRegex.IsMatch(middleName))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -82,7 +82,7 @@ namespace ManipulationsUsingLinq
 
                     Console.WriteLine("Enter Email");
                     string email = Console.ReadLine();
-                    
+
                     while (!ServiceOperations.EmailRegex.IsMatch(email))
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -105,9 +105,9 @@ namespace ManipulationsUsingLinq
                         dob = Console.ReadLine();
                     }
 
-                    DateTime DateOfBirth = DateTime.Parse(dob);
+                    DateTime dateOfBirth = DateTime.Parse(dob);
 
-                    if ((DateTime.Now.Year - DateOfBirth.Year) < 18)
+                    if ((DateTime.Now.Year - dateOfBirth.Year) < 18)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("You're not eligible to enroll!");
@@ -128,6 +128,33 @@ namespace ManipulationsUsingLinq
                         }
 
                         ulong accountNumber = ulong.Parse(accNumber);
+
+                        var data = Database.AccessDatabase();
+
+                        var existingUser = data.Any(d => (d.FirstName == firstName && d.LastName == lastName && d.MiddleName == middleName) || d.AccountNumber == accountNumber);
+                        if (existingUser)
+                        {
+                            Console.WriteLine("You cannot enroll more than once!"); 
+                        }
+                        else
+                        {
+                            long bvn = ServiceOperations.GetNextInt64();
+                            Console.WriteLine(bvn);
+
+                            User newUser = new()
+                            {
+                                LastName = ServiceOperations.CapitalizeFirstLetter(lastName),
+                                FirstName = ServiceOperations.CapitalizeFirstLetter(firstName),
+                                MiddleName = ServiceOperations.CapitalizeFirstLetter(middleName),
+                                Sex = selectedGender,
+                                Email = email.ToLower(),
+                                DateOfBirth = dateOfBirth,
+                                AccountNumber = accountNumber,
+                                BVN = bvn
+                            };
+
+                            Database.AddUser(newUser);
+                        }
                     }
                 }
                 
@@ -145,18 +172,9 @@ namespace ManipulationsUsingLinq
                     }
                     
                     ulong accountNumber = ulong.Parse(number);
-                    Console.WriteLine(accountNumber);
 
-                    // parse a/c number to query database for bvn
-                    //string BVN = Database.RetrieveBVN(accountNumber);
-                    //if (BVN.Any())
-                    //{
-                    //    Console.WriteLine($"BVN: {BVN}");
-                    //}
-                    //else
-                    //{
-                    //    Console.WriteLine("You do not have a BVN, please enroll!");
-                    //}
+                    string BVN = Database.RetrieveBVN(accountNumber);
+                    Console.WriteLine(BVN);
                 }
                 
                 if (operation == BVNOperations.End)

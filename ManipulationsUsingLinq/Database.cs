@@ -13,21 +13,27 @@ namespace ManipulationsUsingLinq
         public static void AddUser(User user)
         {
             _Users.Add(user);
+            Console.WriteLine("User Successfully Enrolled!");
+            Console.WriteLine("Your BVN is: " + user.BVN);
         }
 
         public static string RetrieveBVN(ulong accountNumber)
         {
-            /*var querySyntax = (from user in _Users
-                              where user.AccountNumber where
-                              select user.BVN).ToString();*/
-            //return querySyntax;
-            //var querySyntax = (from user in _Users
-            //                   select user.AccountNumber);
-            //var accountNumbers = (from accNumbers in querySyntax
-            //                     where accNumbers.Contains(accountNumber)
-            //                     select querySyntax);
-            //return accountNumbers.ToString();
-            return "";
+            bool IsFound = _Users.Any(user => user.AccountNumber == accountNumber);
+
+            if (IsFound)
+            {
+                var bvn = (from user in _Users
+                        where user.AccountNumber == accountNumber
+                        select user.BVN).ToList();
+                return string.Join("", bvn);
+            }
+            return "You do not have a BVN, please enroll!";
+        }
+
+        public static List<User> AccessDatabase()
+        {
+            return _Users;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace ManipulationsUsingLinq
 {
@@ -33,6 +34,26 @@ namespace ManipulationsUsingLinq
                 "2" => Gender.Female,
                 _ => Gender.SelectGender
             };
+        }
+
+        public static string CapitalizeFirstLetter(string word)
+        {
+            string newWord = word.ToLower();
+            return char.ToUpper(newWord[0]) + newWord.Substring(1);
+        }
+
+        public static long GetNextInt64()
+        {
+            var bytes = new byte[sizeof(Int64)];
+            RNGCryptoServiceProvider Gen = new RNGCryptoServiceProvider();
+            Gen.GetBytes(bytes);
+
+            long random = BitConverter.ToInt64(bytes, 0);
+
+            //Remove any possible negative generator numbers and shorten the generated number to 11-digits
+            string pos = random.ToString().Replace("-", "").Substring(0, 11);
+
+            return Convert.ToInt64(pos);
         }
     }
 }
