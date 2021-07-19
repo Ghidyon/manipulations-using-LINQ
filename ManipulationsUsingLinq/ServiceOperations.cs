@@ -55,5 +55,14 @@ namespace ManipulationsUsingLinq
 
             return Convert.ToInt64(pos);
         }
+
+        public static string PromptUser(string field, string hint)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{hint}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"\n{field}");
+            return Console.ReadLine();
+        }
     }
 }
