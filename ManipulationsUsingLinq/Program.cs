@@ -6,8 +6,8 @@ namespace ManipulationsUsingLinq
     {
         static void Main(string[] args)
         {
-            //Manipulations.Run();
-            //Manipulations.MatchAlphanumericCharacters();
+            Manipulations.Run();
+            Manipulations.MatchAlphanumericCharacters();
 
             Application.Run();
             //Console.ReadKey();

@@ -15,9 +15,9 @@ namespace ManipulationsUsingLinq
             bool hasSessionEnded = false;
             do
             {
-                // prompt user to perform an operation
                 Console.WriteLine("\nPress the matching number key to:\n1. Enroll for BVN \n2. Check BVN\n3. End");
                 string option = Console.ReadLine().Trim();
+
                 while (string.IsNullOrWhiteSpace(option) || (option != "1" && option != "2" && option != "3"))
                 {
                     option = ServiceOperations.PromptUser("Press the matching number key to:\n1. Enroll for BVN" +
