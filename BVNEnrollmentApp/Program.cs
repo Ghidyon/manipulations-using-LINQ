@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace ManipulationsUsingLinq
+namespace BVNEnrollmentApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "List Shuffler";
-            Manipulations.Run();
+            Application.Run();
         }
     }
 }

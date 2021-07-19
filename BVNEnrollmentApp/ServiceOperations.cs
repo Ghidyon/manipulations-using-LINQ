@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 
-namespace ManipulationsUsingLinq
+namespace BVNEnrollmentApp
 {
     public static class ServiceOperations
     {
@@ -62,7 +62,7 @@ namespace ManipulationsUsingLinq
             Console.WriteLine($"{hint}");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\n{field}");
-            return Console.ReadLine();
+            return Console.ReadLine().Trim();
         }
     }
 }

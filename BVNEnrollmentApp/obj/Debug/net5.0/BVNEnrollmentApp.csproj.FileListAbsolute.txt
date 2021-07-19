@@ -1,0 +1,16 @@
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.exe
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.deps.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.runtimeconfig.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.runtimeconfig.dev.json
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\ref\BVNEnrollmentApp.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\bin\Debug\net5.0\BVNEnrollmentApp.pdb
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.csproj.AssemblyReference.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.AssemblyInfoInputs.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.AssemblyInfo.cs
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.csproj.CoreCompileInputs.cache
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\ref\BVNEnrollmentApp.dll
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.pdb
+C:\Users\ghidyon\source\repos\ManipulationsUsingLinq\BVNEnrollmentApp\obj\Debug\net5.0\BVNEnrollmentApp.genruntimeconfig.cache

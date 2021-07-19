@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManipulationsUsingLinq
+namespace BVNEnrollmentApp
 {
     public static class Application
     {
         public static void Run()
         {
-            Console.WriteLine("\nBVN Enrollment App");
+            Console.Title = "BVN Enrollment App";
+            Console.WriteLine("BVN Enrollment Portal");
 
             bool hasSessionEnded = false;
             do
@@ -37,7 +38,7 @@ namespace ManipulationsUsingLinq
                     }
 
                     Console.WriteLine("\nEnter Last Name");
-                    string lastName = Console.ReadLine();
+                    string lastName = Console.ReadLine().Trim();
 
                     while (!ServiceOperations.NameRegex.IsMatch(lastName))
                     {
@@ -45,7 +46,7 @@ namespace ManipulationsUsingLinq
                     }
 
                     Console.WriteLine("\nEnter Middle Name");
-                    string middleName = Console.ReadLine();
+                    string middleName = Console.ReadLine().Trim();
 
                     while (!ServiceOperations.NameRegex.IsMatch(middleName))
                     {
@@ -63,7 +64,7 @@ namespace ManipulationsUsingLinq
                     Gender selectedGender = ServiceOperations.GenderSelection(gender);
 
                     Console.WriteLine("\nEnter Email");
-                    string email = Console.ReadLine();
+                    string email = Console.ReadLine().Trim();
 
                     while (!ServiceOperations.EmailRegex.IsMatch(email))
                     {
@@ -84,7 +85,7 @@ namespace ManipulationsUsingLinq
                     if ((DateTime.Now.Year - dateOfBirth.Year) < 18)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("You're not eligible to enroll!");
+                        Console.WriteLine("You're ineligible for enrollment!");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
@@ -107,7 +108,6 @@ namespace ManipulationsUsingLinq
                         else
                         {
                             long bvn = ServiceOperations.GetNextInt64();
-                            Console.WriteLine(bvn);
 
                             User newUser = new()
                             {
@@ -142,9 +142,11 @@ namespace ManipulationsUsingLinq
                     ulong accountNumber = ulong.Parse(number);
 
                     string BVN = Database.RetrieveBVN(accountNumber);
-                    Console.WriteLine(BVN);
+                    Console.WriteLine($"\nYour BVN: {BVN}");
+                    Console.ForegroundColor = ConsoleColor.White;
+
                 }
-                
+
                 if (operation == BVNOperations.End)
                 {
                     hasSessionEnded = true;

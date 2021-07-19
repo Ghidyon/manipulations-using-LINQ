@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManipulationsUsingLinq
+namespace BVNEnrollmentApp
 {
     public static class Database
     {
@@ -13,9 +13,12 @@ namespace ManipulationsUsingLinq
         public static void AddUser(User user)
         {
             _Users.Add(user);
-            Console.WriteLine("User Successfully Enrolled!");
+            Console.WriteLine("\nUser Successfully Enrolled!");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Your BVN is: " + user.BVN);
+            Console.ForegroundColor = ConsoleColor.White;
         }
+
 
         public static string RetrieveBVN(ulong accountNumber)
         {
@@ -26,8 +29,10 @@ namespace ManipulationsUsingLinq
                 var bvn = (from user in _Users
                         where user.AccountNumber == accountNumber
                         select user.BVN).ToList();
+                Console.ForegroundColor = ConsoleColor.Green;
                 return string.Join("", bvn);
             }
+            Console.ForegroundColor = ConsoleColor.Red;
             return "You do not have a BVN, please enroll!";
         }
 
