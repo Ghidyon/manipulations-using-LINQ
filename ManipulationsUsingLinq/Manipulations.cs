@@ -46,7 +46,7 @@ namespace ManipulationsUsingLinq
 
             Console.WriteLine("\nInput any of the following characters [!, ), (, *, &, ^, %, $, #, @] to match the numbers 0 - 9");
             string input = Console.ReadLine().Trim();
-            Regex regex = new Regex(@"(\*|\&|\(|\)|\^|\%|\$|\#|\@|\!)+");
+            Regex regex = new Regex(@"^[\*|\&|\(|\)|\^|\%|\$|\#|\@|\!]+$");
             while (string.IsNullOrEmpty(input) || !regex.IsMatch(input))
             {
                 Console.WriteLine("Please enter a valid input!");
