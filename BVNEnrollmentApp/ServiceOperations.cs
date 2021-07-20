@@ -13,7 +13,6 @@ namespace BVNEnrollmentApp
         public static readonly Regex NameRegex = new(@"^[a-zA-z]+$");
         public static readonly Regex TenDigitRegex = new(@"^\d{10}$");
         public static readonly Regex EmailRegex = new(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
-        //public static readonly Regex EmailRegex = new(@"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
 
         public static BVNOperations MatchOption(string option)
         {

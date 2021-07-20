@@ -30,7 +30,7 @@ namespace BVNEnrollmentApp
                 if (operation == BVNOperations.EnrollForBVN)
                 {
                     Console.WriteLine("\nEnter First Name");
-                    string firstName = Console.ReadLine();
+                    string firstName = Console.ReadLine().Trim();
 
                     while (!ServiceOperations.NameRegex.IsMatch(firstName))
                     {
@@ -100,8 +100,8 @@ namespace BVNEnrollmentApp
 
                         ulong accountNumber = ulong.Parse(accNumber);
 
-                        bool existingUser = Database.IsExistingUser(lastName, firstName, middleName, accountNumber);
-                        if (existingUser)
+                        bool isExistingUser = Database.IsExistingUser(lastName, firstName, middleName, accountNumber);
+                        if (isExistingUser)
                         {
                             Console.WriteLine("You cannot enroll more than once!"); 
                         }
@@ -141,8 +141,11 @@ namespace BVNEnrollmentApp
                     
                     ulong accountNumber = ulong.Parse(number);
 
+                    //var subscription = new Events.Event();
+
+
                     string BVN = Database.RetrieveBVN(accountNumber);
-                    Console.WriteLine($"\nYour BVN: {BVN}");
+                    Console.WriteLine($"\n{BVN}");
                     Console.ForegroundColor = ConsoleColor.White;
 
                 }
