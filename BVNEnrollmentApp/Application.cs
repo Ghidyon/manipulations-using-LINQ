@@ -141,9 +141,6 @@ namespace BVNEnrollmentApp
                     
                     ulong accountNumber = ulong.Parse(number);
 
-                    //var subscription = new Events.Event();
-
-
                     string BVN = Database.RetrieveBVN(accountNumber);
                     Console.WriteLine($"\n{BVN}");
                     Console.ForegroundColor = ConsoleColor.White;
