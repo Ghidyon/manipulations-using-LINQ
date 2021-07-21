@@ -43,11 +43,11 @@ namespace BVNEnrollmentApp
 
         public static long GetNextInt64()
         {
-            var bytes = new byte[sizeof(Int64)];
-            RNGCryptoServiceProvider Gen = new RNGCryptoServiceProvider();
+            var bytes = new byte[sizeof(Int64)]; // generates a byte of the size int64
+            RNGCryptoServiceProvider Gen = new RNGCryptoServiceProvider(); // encrypts the bytes
             Gen.GetBytes(bytes);
 
-            long random = BitConverter.ToInt64(bytes, 0);
+            long random = BitConverter.ToInt64(bytes, 0); // unboxing encrypted byte to a long integer variable
 
             //Remove any possible negative generator numbers and shorten the generated number to 11-digits
             string pos = random.ToString().Replace("-", "").Substring(0, 11);
